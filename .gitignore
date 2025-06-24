@@ -1,0 +1,15 @@
+# Hide Python environment files
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# VSCode stuff
+.vscode/
+
+# Mac and Linux junk
+.DS_Store
+
+# Python environment folders
+env/
+venv/

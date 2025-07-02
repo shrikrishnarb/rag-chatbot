@@ -49,10 +49,6 @@ rag/
 
 ```
 
-##  Security Warning
-⚠️ Never commit your .env file to GitHub — it contains your secret API key.
-You’re already protected by .gitignore.
-
 ##  Future Plans
 -Add Streamlit UI for uploads
 -Add PDF upload + real-time Q&A

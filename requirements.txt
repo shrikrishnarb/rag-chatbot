@@ -1,4 +1,12 @@
+# Core
 langchain
+sentence-transformers
+faiss-cpu
+streamlit
+
+# PDF parsing
+pymupdf
+
+# Optional LLM APIs
 openai
 python-dotenv
-streamlit

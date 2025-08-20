@@ -1,5 +1,6 @@
 # Core
 langchain
+langchain-openai
 sentence-transformers
 faiss-cpu
 streamlit

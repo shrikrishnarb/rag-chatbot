@@ -1,63 +1,52 @@
-# RAG: AI-Powered Document Understanding Assistant
+# RAG Chatbot — Chat with Your Documents
 
-**RAG** (Retrieval-Augmented Generation) is a smart AI assistant built using **LangChain**, **OpenAI**, and **Python**. It reads long and complex documents like:
-
--  Resumes
--  Insurance policies
--  Terms & conditions
--  Legal agreements
-
-…and explains them in **simple, human-friendly language**.
+A **Retrieval‑Augmented Generation (RAG)** app built with **Streamlit** and **LangChain**.  
+Upload your documents, index them locally, and ask questions with **context‑aware answers and citations**.
 
 ---
 
-##  What It Can Do
-
--  Understand and summarize **resumes**
--  Break down hard **insurance clauses**
--  Highlight **risky terms in agreements**
--  Help non-experts decide: “Should I sign this?”
--  Explain technical jargon in plain English
+## Features
+- **Multi‑provider LLMs**: OpenAI (GPT‑3.5/4), Google Gemini, Hugging Face (Mistral)
+- **Document types**: PDF, TXT, CSV, DOCX
+- **Local vector DB**: Chroma (persistent storage)
+- **Retrieval strategies**:
+  - Vectorstore retriever
+  - Contextual Compression (split → dedupe → semantic filter → reorder)
+  - Cohere Reranker (optional)
+- **Conversational memory** and **multilingual answers**
+- **Transparent citations** for every response
 
 ---
 
-##  Setup
+## Quickstart
 
-### 1. Clone the repo:
-
+### 1) Clone & Setup
 ```bash
-git clone https://github.com/YOUR_USERNAME/rag.git
-cd rag
-```
-###  2. Create .env file:
-OPENAI_API_KEY=your-openai-api-key
-###  3. Install dependencies:
+git clone https://github.com/your-username/rag-chatbot.git
+cd rag-chatbot
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt
-### 4. Run the app:
-python app.py
-
----
-
-##  Folder Structure
-```bash
-rag/
-├── app.py           # Main chatbot logic
-├── .env             # API keys (kept secret)
-├── .gitignore       # Hides private files
-├── README.md        # This file
-├── requirements.txt # Python dependencies
-
 ```
 
-##  Future Plans
--Add Streamlit UI for uploads
--Add PDF upload + real-time Q&A
--Highlight risky or unclear clauses
--Add voice-based chat for accessibility
--Support Japanese 🇯🇵 and other languages
+### 2) Prepare folders
+```bash
+mkdir -p data/tmp data/vector_stores
+```
 
-##  Use Cases
--A student unsure if their resume is job-ready
--A parent reading through a confusing life insurance policy
--A freelancer reviewing a contract full of legal jargon
--Anyone who just wants to understand before they sign
+### 3) Run the app
+```bash
+streamlit run rag_app.py
+```
+
+## How it works
+-  Upload documents → split into chunks → embed with OpenAI/Google/HF
+-  Store embeddings in Chroma (local persistent DB)
+-  Retrieve relevant chunks using your chosen strategy
+-  Generate answers with context + conversation history
+
+## Requirements
+-  Python 3.12+
+-  Streamlit, LangChain, Chroma
+-  API keys for OpenAI / Google / Hugging Face (and Cohere if using reranker)

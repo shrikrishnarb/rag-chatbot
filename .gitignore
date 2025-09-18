@@ -1,16 +1,17 @@
-# Hide Python environment files
+# Python
+.venv/
 __pycache__/
 *.pyc
-.env
-.env.*
 
-# VSCode stuff
-.vscode/
+# Streamlit
+.streamlit/secrets.toml
 
-# Mac and Linux junk
+# Data / local indexes
+data/tmp/*
+data/vector_stores/*
+!data/tmp/.gitkeep
+!data/vector_stores/.gitkeep
+
+# OS
 .DS_Store
-
-# Python environment folders
-env/
-venv/
-.venv/
+Thumbs.db

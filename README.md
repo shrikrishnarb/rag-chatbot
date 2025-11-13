@@ -70,6 +70,4 @@ streamlit run rag_app.py
 - No API keys required if using Demo Mode or Ollama (local setup)
 
 ## Interface Preview
-```bash
 ![RAG Chatbot Interface](interface.png)
-```
